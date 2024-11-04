@@ -1,38 +1,223 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container{
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.logout-container{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logout-container button{
+  background-color: red;
+  width: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.error-message {
+  color: #ff4d4f;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+h1, h2 {
+  color: #66c2ff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 2.2em;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+label {
+  color: #a1a1a1;
+  font-size: 1em;
+  margin-bottom: 3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+input[type="text"], input[type="password"], input[type="number"] {
+  padding: 10px;
+  border: 1px solid #4da8ff;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus {
+  border-color: #66c2ff;
+  box-shadow: 0 0 8px rgba(102, 194, 255, 0.6);
+  outline: none;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+button, input[type="submit"] {
+  padding: 12px 20px;
+  background-color: #66c2ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-size: 1em;
+  font-weight: bold;
+  align-self: center;
+  width: fit-content;
+  margin: 15px 10px 0;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: #4da8ff;
+  transform: scale(1.05);
+}
+
+button:active, input[type="submit"]:active {
+  background-color: #337ab7;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #333;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  color: #ffffff;
+  border-bottom: 1px solid #333;
+}
+
+th {
+  color: #66c2ff;
+  font-weight: bold;
+}
+
+tbody tr:hover {
+  background-color: #2a2a2a;
+}
+
+a, .character-name, .planet-name, .starship-name {
+  color: #66c2ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover, .character-name:hover, .planet-name:hover, .starship-name:hover {
+  color: #4da8ff;
+  text-decoration: underline;
+}
+
+.btn-pagination {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #66c2ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-pagination:hover {
+  background-color: #4da8ff;
+}
+
+@media (max-width: 768px) {
+  .container{
+      padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1, h2 {
+      font-size: 1.8em;
+  }
+
+  button, input[type="submit"] {
+      padding: 10px 18px;
+      font-size: 0.9em;
+      width: 70%;
+  }
+
+  .btn-pagination {
+      padding: 8px 12px;
+      font-size: 0.9em;
+  }
+
+  table th, table td {
+      font-size: 0.9em;
+      padding: 8px;
+  }
+  .categories{
+    text-align: center;
+  }
+  .logout-container button{
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      padding: 15px;
+  }
+
+  h1, h2 {
+      font-size: 1.6em;
+  }
+
+  button, input[type="submit"] {
+      padding: 8px 16px;
+      font-size: 0.85em;
+      width: 80%;
+  }
+
+  .btn-pagination {
+      padding: 6px 10px;
+      font-size: 0.85em;
+  }
+
+  table th, table td {
+      font-size: 0.85em;
+      padding: 6px;
   }
 }
