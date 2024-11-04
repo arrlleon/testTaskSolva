@@ -1,21 +1,12 @@
-import { useEffect } from "react";
 import { logout } from "../../features/userSlice";
-import { useAppDispatch, useAppSelector } from "../../hook/hook";
+import { useAppDispatch} from "../../hook/hook";
 import { useNavigate } from "react-router-dom";
 
 export default function ItemsList() {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
-    const { isAuth } = useAppSelector(
-        (state) => state.store,
-    );
 
-    useEffect(() => {
-        if (!isAuth) {
-            navigate('/');
-        }
-    }, [isAuth, navigate]); 
 
     const handleLogout = () => {
         dispatch(logout());
