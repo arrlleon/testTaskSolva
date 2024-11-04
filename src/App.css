@@ -29,6 +29,11 @@ body {
   width: 50%;
 }
 
+.logout-container button:hover {
+  background-color: red;
+  width: 50%;
+}
+
 
 .error-message {
   color: #ff4d4f;
